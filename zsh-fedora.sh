@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$EUID" -ne 0 ]; then
-  echo "Пожалуйста, запусти скрипт через sudo"
+  echo "Use sudo for installation"
   exit
 fi
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
