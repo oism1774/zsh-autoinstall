@@ -1,10 +1,10 @@
-🚀 Ultimate Zsh & Powerlevel10k Auto-Installer (Fedora Exclusive)
+## 🚀 Ultimate Zsh & Powerlevel10k Auto-Installer (Fedora Exclusive)
 
 A specialized Bash script designed to automate the installation and configuration of a professional terminal environment specifically for Fedora Linux. It handles everything from package management to shell migration in one go.
 
     [!IMPORTANT] Compatibility: This script is designed ONLY for Fedora. It uses the dnf package manager and is tested on Fedora 41+. It will not work on Ubuntu/Debian or Arch without modification.
 
-✨ Features
+#✨ Features
 
     Zsh shell integration.
 
@@ -20,7 +20,7 @@ A specialized Bash script designed to automate the installation and configuratio
 
         git: Helpful aliases for faster workflow.
 
-🛠 Quick Start
+#🛠 Quick Start
 
     Note: The script requires sudo privileges to install system packages via dnf and to change the default shell.
 
@@ -34,7 +34,7 @@ A specialized Bash script designed to automate the installation and configuratio
 
     sudo ./zsh.sh
 
-📋 What the Script Does (Fedora Workflow)
+#📋 What the Script Does (Fedora Workflow)
 
     DNF Package Installation: Automatically installs zsh, git, and curl from Fedora repositories.
 
@@ -50,24 +50,24 @@ A specialized Bash script designed to automate the installation and configuratio
 
     Instant Initialization: Drops you directly into the Powerlevel10k configuration wizard.
 
-⚠️ Prerequisite: Nerd Fonts
+#⚠️ Prerequisite: Nerd Fonts
 
 To see icons correctly (git branches, system status, etc.), you must use a Nerd Font in your terminal emulator. Recommended: MesloLGS NF (specifically optimized for Powerlevel10k).
-🧪 Testing (Docker / Fedora Image)
+#🧪 Testing (Docker / Fedora Image)
 
 You can safely test this script in a clean Fedora container:
 Bash
 
-# 1. Start a clean Fedora container with SELinux labels (:Z)
+1. Start a clean Fedora container with SELinux labels (:Z)
 docker run -it --rm -v "$(pwd)/zsh.sh:/zsh.sh:Z" fedora /bin/bash
 
-# 2. Inside the container, install sudo and set up a test user
+ 2. Inside the container, install sudo and set up a test user
 dnf install -y util-linux sudo && \
 useradd -m testguy && \
 echo 'testguy ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
 su - testguy
 
-# 3. Execute the script
+ 3. Execute the script
 sudo bash /zsh.sh
 
 📜 License
