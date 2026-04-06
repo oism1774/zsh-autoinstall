@@ -1,8 +1,7 @@
-## 🚀 Ultimate Zsh & Powerlevel10k Auto-Installer (Fedora Exclusive)
+## 🚀 Ultimate Zsh & Powerlevel10k Auto-Installer
 
-A specialized Bash script designed to automate the installation and configuration of a professional terminal environment specifically for Fedora Linux. It handles everything from package management to shell migration in one go.
+A specialized Bash script designed to automate the installation and configuration of a professional terminal environment. It handles everything from package management to shell migration in one go.
 
-    [!IMPORTANT] Compatibility: This script is designed ONLY for Fedora. It uses the dnf package manager and is tested on Fedora 41+. It will not work on Ubuntu/Debian or Arch without modification.
 
 # ✨ Features
 
@@ -20,23 +19,31 @@ A specialized Bash script designed to automate the installation and configuratio
 
         git: Helpful aliases for faster workflow.
 
+#  Support
+
+    My script supports all: 
+    -apt
+    -dnf
+    -pacman
+    based Linux distros.
+
 # 🛠 Quick Start
 
-    Note: The script requires sudo privileges to install system packages via dnf and to change the default shell.
+    Note: The script requires sudo privileges to install system packages via package manager and to change the default shell.
 
     Prepare the script:
     Bash
 
-    chmod +x zsh.sh
+    chmod +x zsh_autoinstall.sh
 
     Run the installer:
     Bash
 
-    sudo ./zsh.sh
+    sudo ./zsh_autoinstall.sh
 
-# 📋 What the Script Does (Fedora Workflow)
+# 📋 What the Script Does 
 
-    DNF Package Installation: Automatically installs zsh, git, and curl from Fedora repositories.
+    Package Installation: Automatically installs zsh, git, and curl from repositories.
 
     Environment Cleanup: Wipes existing .oh-my-zsh and .zshrc to ensure a conflict-free setup.
 
