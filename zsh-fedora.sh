@@ -1,11 +1,21 @@
 #!/bin/bash
+set -e
 if [ "$EUID" -ne 0 ]; then
   echo "Use sudo for installation"
   exit
 fi
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
-dnf install zsh git curl -y
+if command -v dnf &>/dev/null; then
+  dnf install -y zsh git curl
+elif command -v apt &>/dev/null; then
+  apt install -y zsh git curl
+elif command -v pacman &>/dev/null; then
+  pacman -S --noconfirm zsh git curl
+else
+  echo "Unsupported package manager"
+  exit 1
+fi
 
 rm -rf "$USER_HOME/.oh-my-zsh"
 rm -f "$USER_HOME/.zshrc"
